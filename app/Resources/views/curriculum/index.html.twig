@@ -1,0 +1,79 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+<div class="global">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 margBot pull-left slider-box">
+                    <div class="content-box1">
+                        <h2 class="color2 text-center">
+                            <span>Hoja de Vida 
+                            </span>
+                        </h2>
+
+                        {% block body %}
+    {% if curricula is not empty %}  
+    <br>
+        {% for curriculum in curricula %}
+            <div class="col-md-12 modulo">
+                <div class="row">
+                <div class="col-md-2">
+                {%set imagen=curriculum.imagen%}
+                {% if imagen is not empty%}
+                    <img src="{{ asset ('uploads/images/users/'~ imagen) }}" class="img-responsive" alt="{{ curriculum.nombre }} {{ curriculum.apellido }}" width="100" height="100" />
+                {%else%}
+                     <img src="{{ asset ('assets/images/usuaria.png') }}" class="img-responsive" alt="{{ curriculum.nombre }} {{ curriculum.apellido }}" width="100" height="100" />
+                {%endif%}
+                    </div>
+                <div class="col-md-8">
+                    <div class="row">
+                       <div class="col-md-12">
+                            {%if app.user is not empty%}
+                           <a href="{{ path('curriculum_show', { 'id': curriculum.id }) }}">{{ curriculum.nombre }} {{ curriculum.apellido }}</a>
+                            {%endif%}
+                           <p> {{ curriculum.telefono }}</p>
+                            <p> {{ curriculum.direccion }}</p>
+                            {%if app.user is not empty%}
+                            {{ app.user.username }}
+                            <p><a href="{{ path('curriculum_show', { 'id': curriculum.id }) }}">Ver Curriculum <span class="glyphicon glyphicon-eye-open"></span></a>&nbsp;<a href="{{ path('curriculum_edit', { 'id': curriculum.id }) }}">Editar <span class="glyphicon glyphicon-pencil"></span></a><br><a href="{{ path('experiencia_index') }}">Editar Experiencia Laboral<span class="glyphicon glyphicon-pencil"></span></a></p>
+                            {%endif%}                           
+                       </div> 
+                    </div>
+                </div>
+            </div>
+        </div>                            
+        {% endfor %}
+        <a class="btn btn-success btn-lg" href="{{ path('experiencia_new') }}"><span class="glyphicon glyphicon-plus">Agregar Experiencia Laboral</span></a>
+    </div>
+    {% else %}
+    <center>
+        <a href="{{ path('curriculum_new') }}"><span class="glyphicon glyphicon-plus">  Ingresa tu información</span></a>
+    </center>
+    {% endif %}
+{% endblock %}
+
+                        
+                        
+                    </div>
+                    <!--bootstrap slider starts-->
+                    
+                        
+                    </div>
+                    
+                </div>
+                <!--bootstrap slider ends-->
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+    </div>
+    </div> </div>
+
+    {% endblock%}
+
+
+

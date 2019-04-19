@@ -1,0 +1,91 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+<div class="global">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 margBot pull-left slider-box">
+                    <div class="content-box1">
+                        <h2 class="color2 text-center">
+                            <span>Experiencia Laboral
+                            </span>
+                        </h2>
+
+                        {% block body %}
+    <br>
+    <div class="table-responsive"> 
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Empresa</th>
+                <td>{{ experiencium.empresa }}</td>
+            </tr>
+            <tr>
+                <th>Cargo</th>
+                <td>{{ experiencium.cargo }}</td>
+            </tr>
+            <tr>
+                <th>Teléfono</th>
+                <td>{{ experiencium.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Motivo de Salida</th>
+                <td>{{ experiencium.motivoSalida }}</td>
+            </tr>
+            <tr>
+                <th>Fecha Inicio</th>
+                <td>{% if experiencium.fechaInicio %}{{ experiencium.fechaInicio|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fecha Fin</th>
+                <td>{% if experiencium.fechaFin %}{{ experiencium.fechaFin|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Certificado Laboral</th>
+                <td>
+                    {%set certificadolaboral=experiencium.imagen%} 
+                    {% if certificadolaboral is not empty %}
+                        <a href="{{ asset ('uploads/images/certificadoslaborales/'~ certificadolaboral) }}" target="_blank">Certificado Laboral</a> 
+                    {%else%}
+                        Falta documento
+                    {%endif%}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+        
+{% endblock %}
+
+<ul>
+            <a href="{{ path('experiencia_index') }}" class="btn btn-info">Regresar al listado</a>
+            {%if idCV == app.user.id%}
+            <a href="{{ path('experiencia_edit', { 'id': experiencium.id }) }}" class="btn btn-warning">Editar</a>
+                <a href="{{ path('curriculum_index') }}" class="btn btn-info">Regresar a la hoja de vida</a>
+            <br><br>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar" class="btn btn-danger" onclick="return confirm('Esta seguro?')">
+            {{ form_end(delete_form) }}
+            {% endif %}
+
+        </ul>
+                    </div>
+                    <!--bootstrap slider starts-->
+                            
+                        
+                    </div>
+                    
+                </div>
+                <!--bootstrap slider ends-->
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+    </div>
+    </div> </div>
+
+    {% endblock%}

@@ -1,0 +1,42 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+  <div class="container" style="color:rgba(0,79,162,1) !important; margin-bottom:100px">
+    <div class="row">
+      <div class="col-md-12" data-aos="fade-left">
+        <h1 class="text-center" style="font-size:4em"><b>ABOUT</b> US</h1>
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4" data-aos="fade-right" style=";">
+              <form action="" method="post">
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control form-control-sm">
+                    <input type="text" name="email" id="email" placeholder="Email" class="form-control form-control-sm">
+                    <input type="text" name="telefono" id="telefono" placeholder="Telefono" class="form-control form-control-sm">  
+                    <textarea name="mensaje" id="mensaje" placeholder="Mensaje" class="form-control form-control-sm" id="" cols="30" rows="10"></textarea>
+                  <br><br>
+                  <button class="btn btn-success btn-lg">
+                    Enviar
+                  </button>
+                  
+                </form>
+          </div>
+          <div class="col-md-4" data-aos="fade-left" style="border:2px solid rgba(0,79,162,1); padding:10px; margin-left-50px;margin-top:200px;left: -30px;
+    top: 70px;
+    background-color: white;">
+            500 Terry Francois Street <br>
+
+San Francisco, CA 94158
+
+<hr style="border-bottom:2px solid rgba(0,79,162,1)">
+
+info@mysite.com <br>
+
+Tel: 1234-456-7890 <br>
+
+Fax: 123-456-7899
+          </div>
+    </div>
+  </div>
+
+
+ {% endblock%}

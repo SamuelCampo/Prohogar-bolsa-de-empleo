@@ -1,0 +1,47 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+<div class="global">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 margBot pull-left slider-box">
+                    <div class="content-box1 row">
+                        <h2 class="color2 text-center">
+                            <span>Ingrese la información 
+                            </span>
+                        </h2>
+
+                        {% block body %}
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {#{  form_widget( form.fechaFin.day,{'attr': { 'style': 'display:none' }} ) }#}
+        <input type="submit" value="Enviar" class="btn btn-success" />
+    {{ form_end(form) }}
+
+        <div class="col-md-12">
+            <a href="{{ path('experiencia_index') }}" class="btn btn-info">Regresar al listado</a>
+            <a href="{{ path('curriculum_index') }}" class="btn btn-info">Regresar a la hoja de vida</a>
+        </div>
+{% endblock %}
+                        
+                    </div>
+                    <!--bootstrap slider starts-->
+                    
+                        
+                    </div>
+                    
+                </div>
+                <!--bootstrap slider ends-->
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+    </div>
+    </div> </div>
+
+    {% endblock%}

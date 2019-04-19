@@ -1,0 +1,15 @@
+{# app/Resources/views/Emails/registration.html.twig #}
+<h3>Usuari@</h3>
+
+<p>Hola sus datos temporales son:</p>
+
+<p>Para ingresar utiliza estos datos:</p>
+Usuario: {{ emailreceptor }} <br>
+Password: {{ claveactivacion }}
+
+{# example, assuming you have a route named "login" #}
+<p>No olvide realizar su cambio de clave. <a href="{{ url('login') }}">cleanjob.com.ec</a>.</p>
+
+Gracias!
+
+{# Makes an absolute URL to the /images/logo.png file #}

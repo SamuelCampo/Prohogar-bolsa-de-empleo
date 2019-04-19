@@ -1,0 +1,53 @@
+login:
+    path: /login
+    defaults: { _controller: AppBundle:App:login }
+
+login_check:
+    path: /login_check
+    
+logout:
+    path: /logout
+
+home:
+    path: /home
+    defaults: { _controller: AppBundle:App:home }
+
+nosotros:
+    path: /nosotros
+    defaults: { _controller: AppBundle:App:nosotros } 
+
+quincetips:
+    path: /15-tips
+    defaults: { _controller: AppBundle:App:quincetips }
+
+politicasprivacidad:
+    path: /politicas-privacidad
+    defaults: { _controller: AppBundle:App:politicasprivacidad }
+
+registro:
+    path: /registro
+    defaults: { _controller: AppBundle:App:registro } 
+
+registrocliente:
+    path: /registro_cliente/
+    defaults: { _controller: AppBundle:App:registrocliente }  
+    
+recuperar:
+    path: /recuperar
+    defaults: { _controller: AppBundle:App:recuperar }
+    
+clave:
+    path: /clave
+    defaults: { _controller: AppBundle:App:clave }  
+
+contacto:
+    path: /contacto
+    defaults: { _controller: AppBundle:App:contacto }
+    
+search:
+    path: /search
+    defaults: { _controller: AppBundle:App:search }    
+
+busqueda:
+    path: /busqueda
+    defaults: { _controller: AppBundle:App:busqueda }            

@@ -1,0 +1,15 @@
+{# app/Resources/views/Emails/contacto.html.twig #}
+<h3>Contacto</h3>
+
+<p>El usuario {{ nombre }} con email: {{ email }}</p>
+
+<p>Su teléfono: {{ telefono }} </p>
+<p>Escribio por el tema: {{ tema }}</p>
+Mensaje: {{ mensaje }} <br>
+
+{# example, assuming you have a route named "login" #}
+<p>Mensaje generado desde : <a href="{{ url('login') }}">cleanjob.com.ec</a>.</p>
+
+Gracias!
+
+{# Makes an absolute URL to the /images/logo.png file #}

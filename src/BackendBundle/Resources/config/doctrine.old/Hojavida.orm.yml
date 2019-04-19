@@ -1,0 +1,504 @@
+BackendBundle\Entity\Hojavida:
+    type: entity
+    table: hojavida
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        telefono:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        estadoCivil:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: estado_civil
+        hijos:
+            type: string
+            nullable: false
+            length: 5
+            options:
+                fixed: false
+        intereses:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        trabajoDe:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+            column: trabajo_de
+        horario:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        tipoDocumento:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: tipo_documento
+        cedula:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        seudonimo:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        fechaNacimiento:
+            type: date
+            nullable: false
+            column: fecha_nacimiento
+        sexo:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        signo:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        nacionalidad:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        ciudadNatal:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: ciudad_natal
+        ciudadResidencia:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: ciudad_residencia
+        direccion:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        barrio:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        sector:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        numHijos:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: num_hijos
+        edadHijo:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: edad_hijo
+        vivienda:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        madreSoltera:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: madre_soltera
+        ligada:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        raza:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        discapacidad:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        cualDiscapacidad:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: cual_discapacidad
+        celular:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        telefonoFijo:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: telefono_fijo
+        idiomas:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        estudios:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        cursoRealizado:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: curso_realizado
+        automovil:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        licencia:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        cocina:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+        nivelCocina:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: nivel_cocina
+        aniosCocina:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: anios_cocina
+        gustoCocina:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: gusto_cocina
+        especialidadCocina:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: especialidad_cocina
+        organizacion:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        nivelLimpieza:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: nivel_limpieza
+        aniosLimpieza:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: anios_limpieza
+        gustoLimpieza:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: gusto_limpieza
+        especilidadOrganizacion:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: especilidad_organizacion
+        planchado:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+        nivelPlanchado:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: nivel_planchado
+        aniosPlanchado:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: anios_planchado
+        gustoPlanchado:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: gusto_planchado
+        lineasPlanchado:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: lineas_planchado
+        especialidadPlanchado:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: especialidad_planchado
+        bebes:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        nivelBebes:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: nivel_bebes
+        aniosBebes:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: anios_bebes
+        especialidadBebes:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: especialidad_bebes
+        ninos:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        nivelNinos:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: nivel_ninos
+        anosNinos:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: anos_ninos
+        especialidadNinos:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: especialidad_ninos
+        mayores:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        nivelMayores:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: nivel_mayores
+        aniosMayores:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: anios_mayores
+        especialidadMayores:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: especialidad_mayores
+        movilidadReducida:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: movilidad_reducida
+        nmovilidadReducida:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: nmovilidad_reducida
+        amovilidadReducida:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: amovilidad_reducida
+        emovilidadReducida:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: emovilidad_reducida
+        tipoSangre:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: tipo_sangre
+        asma:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        epilepsia:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        diabetes:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        enfermedadesContagiosas:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: enfermedades_contagiosas
+        alergias:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        alergiaCual:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+            column: alergia_cual
+        otros:
+            type: string
+            nullable: false
+            length: 20
+            options:
+                fixed: false
+        aceptoHoras:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: acepto_horas
+        aspiracionSalarial:
+            type: string
+            nullable: false
+            length: 10
+            options:
+                fixed: false
+            column: aspiracion_salarial
+    lifecycleCallbacks: {  }

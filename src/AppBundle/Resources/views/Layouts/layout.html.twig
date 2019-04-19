@@ -1,0 +1,249 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>
+	cleanjob
+</title>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="img/favicon.ico" type="image/x-icon" /></link>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <meta name="title" content="Prohogar &amp; Bolsa de Trabajo" /><meta name="description" content="Bolsa de Trabajo" /><meta name="format-detection" content="telephone=no" />
+    <!--CSS-->
+    <link href="{{ asset('assets/css/estilos.css') }}" type="text/css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/pasos.css') }}" type="text/css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/b-flash-1.2.2/b-html5-1.2.2/b-print-1.2.2/fc-3.2.2/fh-3.1.2/r-2.1.0/datatables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.1/release/featherlight.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- web-fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+    
+    <link type="text/css" rel="stylesheet" href=" {{ asset ('bundles/app/vendors/bootstrap/css/bootstrap.min.css') }}">
+    <link type="text/css" rel="stylesheet" href=" {{ asset ('bundles/app/vendors/font-awesome/css/font-awesome.min.css') }}">
+    <link type="text/css" rel="stylesheet" href=" {{ asset ('assets/vendor/bootstrap-social/bootstrap-social.css') }}">
+    <link type="text/css" rel="stylesheet" href=" {{ asset ('bundles/app/css/bootstrap-datepicker3.min.css') }}">
+
+    <!--JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ asset('bundles/app/vendors/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('assets/js/custom.js') }}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js" charset="UTF-8"></script>
+    <script src="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/b-flash-1.2.2/b-html5-1.2.2/b-print-1.2.2/fc-3.2.2/fh-3.1.2/r-2.1.0/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+    <script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.1/release/featherlight.min.js"></script>
+
+    <script src="{{ asset('bundles/sgdatatables/js/pipeline.js') }}"></script>
+
+    <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+    <link href="{{ asset('assets/css/custom.css') }}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+
+<!-- Menu  -->
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed btn btn-btn-btn" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{{path('app_homepage')}}"><img class="img-responsive" src="{{ asset ('assets/images/3l.png') }}"  alt=""></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" id="primary-menu" style="margin-left:40%;">
+        {% if app.user=="" %}
+        <!--<li><a href="{{path('registro')}}">Busco Trabajo <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{path('registrocliente')}}">Necesito personal</a></li>
+        <li><a href="{{path('login')}}">Iniciar Sesión</a></li>-->
+        {% else %}
+          <li>
+              <a href="{{path('app_homepage')}}">Bienvenid@ {{app.user}} </a>          
+          </li>
+         {% if app.user.role != "ROLE_CLIENTE" %} 
+           <li><a href="{{path('curriculum_index')}}">Hoja de Vida</a></li>
+         {% endif %}  
+         
+         <li><a href="{{path('clave')}}">Cambio clave</a></li>
+         <li><a href="{{path('logout')}}">Salir</a></li>
+        {% endif %}  
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="redes">
+        <!--li><a href="#"><i class="fab fa-twitter"></i></a></li-->
+        <li><a href="https://www.facebook.com/cleanjobecuador/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="https://www.instagram.com/clean_job/" target="_blank"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <ul class="nav navbar-nav" style="margin-left:58%;margin-top:-10px;" id="menu-secundary">
+        <li class="active"><a href="{{path('app_homepage')}}">Inicio <span class="sr-only">(current)</span></a></li>
+        {% if app.user=="" or app.user.role!="ROLE_USER"  %}
+            <li><a href="{{path('curriculum_all')}}">Nuestra Base de Datos</a></li>
+        {% endif %}
+        
+        <li><a href="{{path('nosotros')}}">Sobre Nosotros</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="{{path('contacto')}}">Contacto</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!-- Menu -->
+
+<br>
+
+</div>
+</div>
+
+    </header>
+
+    <div style="display: none;" class="popup youtube">
+        <a class="close" href="javascript:;">X</a>
+        <div-- class="video-container1">
+            <!--div class="iframe">
+                <iframe src="https://www.youtube.com/embed/gwOxJ9HxW0Y" allowfullscreen="" frameborder="0"
+                    height="315" width="560"></iframe>
+            </div-->
+        </div>
+    </div>
+
+    {% block content %}
+       Content default
+    {% endblock %}
+
+    <div class="foobox" style="background-color: #3d9be9">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 center" style="border-right:1px solid white;">
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12" style="">
+                    <h4>
+                        AYUDA</h4>
+                    <ul class="list2">
+                        <li><a href="{{path('app_homepage')}}">Inicio</a></li>
+                        <li><a href="{{path('curriculum_all')}}">Buscas Empleo?</a></li>
+                        <li><a href="{{path('curriculum_all')}}">Buscas Personal?</a></li>
+                        <li><a href="{{path('login')}}">Iniciar Sesi%oacute;n</a></li>
+						<!--<li><a id="login" href="javascript:void(0)">Facebook login</a> </li>-->
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                  500 Terry Francois Street <br>
+                  San Francisco, CA 94158
+                </div>
+                <div class="col-lg-2 col-md-3 col-sm-12 col-xs-12">
+                    <h4>
+                        Contacto</h4>
+                    <p>
+                        Email: <a href="mailto:info@cleanjob.com.ec?Subject=Hola" target="_top">info@cleanjob.com.ec</a></p>
+                    <p>
+                        Móvil : <a href="tel:+0990166067">+0990166067</a>
+                    </p>
+                   <p>
+                         Oficina : <a href="tel:+0990166067">+0990166067</a>
+                    </p>
+                    <p>
+                        (9 AM a 5 PM - Lun to Vie)</p>
+                    <!--ul class="follow_icon">
+                        <li><a href="https://youtu.be/gwOxJ9HxW0Y" target="_blank" class="fa fa-youtube-play">
+                        </a></li>
+                    </ul-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer style="background-color: #3d9be9; color:white">
+        <div class="container">
+         <div class="row">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <p style="text-align:center !important; color:white">Desarrollado por <a href="http://hackeruna.com" style="color:white" target="_blank">http://hackeruna.com</a></p>
+                </div>
+         </div>
+        </div>
+    </footer>
+    <style>
+        .no-padding{
+            padding-left: -15px !important;
+            padding-right: -15px !important;
+        }
+        .word { 
+  background-color: #ccc;
+  font-family: Arial;
+  font-size: 48px;
+  color: black;
+  line-height: 1.4em;
+  height: 1.4em;
+  padding: 0 14px 0 7px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.word:before {
+  content: '';
+  background-color: black;
+  width: 1px;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 7px;
+}
+    </style>
+    <script>
+  AOS.init();
+</script>
+<script>
+    var words = ['Aseo', 'Cocina', 'Lavanderia', 'Paseo canino'],
+    wordWrapper = document.getElementById('word'),
+    wordWrapperContent = wordWrapper.innerHTML,
+    addingWord = false,
+    counter = 1;
+
+setInterval(function(){
+
+  if(wordWrapperContent.length > 0 && !addingWord ) {
+    wordWrapper.innerHTML = wordWrapperContent.slice(0, -1);
+    wordWrapperContent = wordWrapper.innerHTML;
+  } else {
+    addingWord = true;
+  }
+
+  if( addingWord ){
+    if( wordWrapperContent.length < words[counter].length  ) {
+      wordWrapper.innerHTML = words[counter].slice(0, wordWrapperContent.length + 1);
+      wordWrapperContent = wordWrapper.innerHTML;
+    } else {
+      if( counter < words.length) {
+        counter ++
+      }
+      addingWord = false;
+    }
+  }
+
+  if( counter == words.length) {
+    counter = 0;
+  }
+
+}, 150);
+</script>
+</body>
+</html>

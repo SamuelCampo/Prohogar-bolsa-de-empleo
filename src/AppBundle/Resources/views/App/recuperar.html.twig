@@ -1,0 +1,61 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+<style>
+.form-group {
+    margin-bottom: 15px;
+    width: 100% !important;
+}
+</style>
+
+<div class="global">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 margBot pull-left slider-box content-box1">
+                    <div class="">
+                        <h2 class="color2 text-center">
+                            <span>Recuperar contraseña
+                            </span>
+                        </h2>
+
+                        {% block body %}
+     
+        
+        
+        <form class="form-horizontal" action="" method="POST" style="padding:40px">
+        <div class="form-group">
+         <label class="control-label" for="email">Correo Electrónico:</label>
+          <div class="">
+           {{ form_widget(form.email) }}
+          </div>
+        </div>
+        {{form_errors(form)}}
+        {{form_end(form)}}
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="history.go(-1); return false;"><span class="glyphicon glyphicon-arrow-left"></span> Regresar</button>
+        
+{% endblock %}
+
+                        
+                        
+                    </div>
+                    <!--bootstrap slider starts-->
+                    
+                        
+                    </div>
+                    
+                </div>
+                <!--bootstrap slider ends-->
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+    </div>
+    </div> </div>
+
+    {% endblock%}

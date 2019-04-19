@@ -1,0 +1,54 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+<div class="global">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 margBot pull-left slider-box">
+                    <div class="content-box1">
+                        <h2 class="color2 text-center">
+                            <span>Editar Hoja de Vida 
+                            </span>
+                        </h2>
+
+                        {% block body %}
+
+    <ul>
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <a class="btn btn-success btn-lg" href="{{ path('experiencia_new') }}"><span class="glyphicon glyphicon-plus">Agregar Experiencia Laboral</span></a><br><br>
+         <input type="submit" value="Guardar" class="btn btn-warning" />
+         <a href="{{ path('curriculum_index') }}" class="btn btn-info">Regresar al listado</a>
+        {{ form_end(edit_form) }}
+            
+            
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar" class="btn btn-danger" onclick="return confirm('Esta seguro?')">
+            {{ form_end(delete_form) }}
+        
+    </ul>
+{% endblock %}
+
+                        
+                        
+                    </div>
+                    <!--bootstrap slider starts-->
+                    
+                        
+                    </div>
+                    
+                </div>
+                <!--bootstrap slider ends-->
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+    </div>
+    </div> </div>
+
+    {% endblock%}
+

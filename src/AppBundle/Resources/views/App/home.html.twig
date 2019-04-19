@@ -1,0 +1,656 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+<style>
+.form-group {
+    margin-bottom: 15px;
+    width: 100% !important;
+}
+
+
+</style>
+<div class="" style="width:8%;margin-bottom:15px; top: 30%;
+    z-index: 998;position: fixed;">
+    <!--div class="btn-sec text-center" style="background-color: #da5207; color:white"><i class="fas fa-comments"></i><h6 class="text-icon">Chat</h6></div-->
+    <a href="" style="width:10%; margin-bottom:30px">
+        <div style="border-bottom: 30px solid rgba(0, 79, 162, 1);
+    top: 50% !important;    border-left: 0;
+    border-right: 50px solid transparent;right:1px"></div>
+    <div class="btn-sec text-center" style="color:white;margin-top:-20px !important;margin-bottom:-20px !important">
+            <h6 class="text-icon">Busco Trabajo</h6>
+        </div>
+    <div style="border-top: 30px solid rgba(0, 79, 162, 1);
+    top: 50% !important;    border-left: 0;
+    border-right: 50px solid transparent;right:1px">
+    </div>
+        </a>
+</div>
+<div class="" style="width:10%;margin-bottom:15px; top: 38%;
+    z-index: 998;position: fixed;">
+    <!--div class="btn-sec text-center" style="background-color: #da5207; color:white"><i class="fas fa-comments"></i><h6 class="text-icon">Chat</h6></div-->
+    <a href="" style="width:10%; margin-bottom:30px">
+        <div style="border-bottom: 30px solid rgba(0, 79, 162, 1);
+    top: 50% !important;    border-left: 0;
+    border-right: 50px solid transparent;right:1px"></div>
+    <div class="btn-sec text-center" style="color:white;margin-top:-20px !important;margin-bottom:-20px !important">
+            <h6 class="text-icon">Necesito Personal</h6>
+        </div>
+    <div style="border-top: 30px solid rgba(0, 79, 162, 1);
+    top: 50% !important;    border-left: 0;
+    border-right: 50px solid transparent;right:1px">
+    </div>
+        </a>
+</div>
+<div class="" style="width:12%;margin-bottom:15px; top: 46%;
+    z-index: 998;position: fixed;">
+    <!--div class="btn-sec text-center" style="background-color: #da5207; color:white"><i class="fas fa-comments"></i><h6 class="text-icon">Chat</h6></div-->
+    <a href="" style="width:10%; margin-bottom:30px">
+        <div style="border-bottom: 30px solid rgba(0, 79, 162, 1);
+    top: 50% !important;    border-left: 0;
+    border-right: 50px solid transparent;right:1px"></div>
+    <div class="btn-sec text-center" style="color:white;margin-top:-20px !important;margin-bottom:-20px !important">
+            <h6 class="text-icon">Iniciar sesion</h6>
+        </div>
+    <div style="border-top: 30px solid rgba(0, 79, 162, 1);
+    top: 50% !important;    border-left: 0;
+    border-right: 50px solid transparent;right:1px">
+    </div>
+        </a>
+</div>
+<div class="container-fluid " style="padding:0px -15px">
+    <div id="carousel-example-generica" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generica" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generica" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generica" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active" style="background-image: url({{ asset ('assets/images/slider.jpg') }}); background-size:cover;height:60vh">
+      
+      <div class="carousel-caption">
+        <h1>Bienvenidos al primer portal <br> de Servicios Domesticos</h1>
+        <span class="word" id="word"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generica" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generica" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<img src="{{ asset ('assets/images/banner.jpg') }}" class="img-responsive banner" style="width:100%" alt="Banner-clean">
+</div>
+<br><br>
+<div class="container"> 
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+            <svg preserveAspectRatio="xMidYMid meet" style="fill:rgba(0, 79, 162, 1); max-width: 50%;display:block;margin:auto" data-bbox="14.648 9.9 170.678 180.3" viewBox="14.647998809814453 9.899999618530273 170.67791748046875 180.3000030517578" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" style="stroke-width: 0px;">
+                <g>
+                    <path d="M183.9 70.6l-28.6-20.9V20.2c0-1.7-1.1-2.8-2.8-2.8h-14.2c-1.7 0-2.8 1.1-2.8 2.8v15.3l-34.5-25c-1.1-.8-2.2-.8-3.3 0l-82 60.1c-1.1.8-1.4 2.8-.6 3.9.8 1.1 2.8 1.4 3.9.6l7.8-5.6v117.9c0 1.7 1.1 2.8 2.8 2.8h141c1.7 0 2.8-1.1 2.8-2.8V69.5l7.8 5.6c.6.3 1.1.6 1.7.6.8 0 1.7-.3 2.2-1.1.5-1.5.2-3.2-1.2-4zM141.4 23h8.6v22.8l-8.6-6.4V23zm-28.1 161.6H86.1v-63.9h27.2v63.9zm5.6 0v-66.7c0-1.7-1.1-2.8-2.8-2.8H83.6c-1.7 0-2.8 1.1-2.8 2.8v66.7H32.1V65.3l67.6-49.5 67.6 49.5v119.3h-48.4zm24.2-61.5c-6.4 0-11.4 4.2-11.7 9.2v29.5c0 1.7 1.1 3.1 2.8 3.1H152c1.7 0 2.8-1.1 2.8-2.8v-29.8c-.3-5.3-5.3-9.2-11.7-9.2zm6.1 9.7V159H137v-26.1c0-2.5 2.8-4.4 6.1-4.4s6.1 1.9 6.1 4.2v.1zm-91.2-10c-6.4 0-11.4 4.2-11.7 9.5v29.5c0 1.7 1.1 2.8 2.8 2.8h17.8c1.7 0 2.8-1.1 2.8-2.8v-29.5c-.3-5.3-5.3-9.5-11.7-9.5zm6.1 10.3v26.1H51.9v-26.4c0-2.2 2.8-4.2 6.1-4.2s6.1 1.9 6.1 4.2v.3zm35.6-74.5c-10.6-.3-18.9 6.4-19.5 15v10.9c0 1.7 1.1 2.8 2.8 2.8h33.4c1.7 0 2.8-1.1 2.8-2.8V73.6c-.3-8.6-8.9-15-19.5-15zm-2.8 23.1H85.8v-7.5c0-4.7 4.7-8.9 11.1-9.7v17.2zm16.7-7.5v7.2h-11.1V64.2c6.4.8 11.1 5 11.1 9.7v.3z"></path>
+                </g>
+            </svg>
+            <br><h4 class="text-center" style="color:rgba(0,79,162,1)"><b>Registrate</b></h4>
+        </div>
+        <div class="col-md-2">
+            <svg preserveAspectRatio="xMidYMid meet" style="fill:rgba(0, 79, 162, 1); max-width: 50%;display:block;margin:auto" data-bbox="14.3 4.9 171.5 190.1" viewBox="14.299997329711914 4.900000095367432 171.5 190.1000213623047" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" style="stroke-width: 0px;">
+    <g>
+        <path d="M182.9 189.9h-5.5V30.1c0-1.6-1.1-2.6-2.6-2.6h-13.7V16.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v11.3h-13.7c-1.6 0-2.6 1.1-2.6 2.6v79.5h-17.4V14.1c0-1.6-1.1-2.6-2.6-2.6H87.4c-1.6 0-2.6 1.1-2.6 2.6v119.7h-3.4V75.1c0-1.6-1.1-2.6-2.6-2.6H65.3V22.8c0-1.6-1.1-2.6-2.6-2.6H46.6V7.5c0-1.6-1.1-2.6-2.6-2.6S41.4 6 41.4 7.5v12.6H25.3c-1.6 0-2.6 1.1-2.6 2.6v167.1h-5.8c-1.6 0-2.6 1.1-2.6 2.6 0 1.6 1.1 2.6 2.6 2.6h166.3c1.6 0 2.6-1.1 2.6-2.6s-1.3-2.5-2.9-2.5zM172.1 32.8v157.1h-27.4V32.8h27.4zm-32.6 157.1h-27.1v-75h27.1v75zM90 16.7h27.1v92.6H110c-1.6 0-2.6 1.1-2.6 2.6v21.6H90V16.7zm17.1 122.4v50.8h-3.2v-12.1c0-5.5-4.5-10-10-10s-10 4.5-10 10v11.8h-2.6v-50.5h25.8zm-8.4 50.8h-9.2v-12.1c0-2.6 2.1-4.7 4.7-4.7s4.7 2.1 4.7 4.7v12.1h-.2zm-22.6 0H48.9V77.8H76v112.1zM27.6 25.4h32.1v47.1H46.3c-1.6 0-2.6 1.1-2.6 2.6v114.5H27.6V25.4z"></path>
+        <path d="M56.1 112.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.6 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 112.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 130.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 130.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 93.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.6 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 93.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 148.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.6 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 148.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 167.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 167.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 185.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M36.3 175.7c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 50.1c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 68.6c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.6-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 32c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.6-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 86.7c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 105.1c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.5-1.3-2.6-2.6-2.6z"></path>
+        <path d="M50.8 41.7c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M50.8 59.9c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M36.3 123c-1.6 0-2.6 1.1-2.6 2.6v4.8c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.8c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 141.4c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6V144c0-1.5-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 159.6c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M68.7 185.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 43c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.5-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 52.5c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 60.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6V63c0-1.6-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 69.9c1.6 0 2.6-1.1 2.6-2.6V63c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.6 1.3 2.7 2.6 2.7z"></path>
+        <path d="M97.1 25.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6V28c0-1.3-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 34.9c1.6 0 2.6-1.1 2.6-2.6V28c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.6 1.3 2.7 2.6 2.7z"></path>
+        <path d="M97.1 77.8c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.3-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 87.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 95.1c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.3-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 104.9c1.6 0 2.6-1.1 2.6-2.6V98c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.4 1.3 2.7 2.6 2.7z"></path>
+        <path d="M152.1 66.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 66.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 83.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6V81c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 83.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6V81c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 48.8c1.6 0 2.6-1.1 2.6-2.6V42c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 48.8c1.6 0 2.6-1.1 2.6-2.6V42c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 101.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 101.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 118.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 118.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 135.9c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 135.9c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 153.3c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 153.3c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 170.7c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 170.7c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 112.8c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1-2.6-2.6-2.6z"></path>
+        <path d="M119.7 127c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c.1-1.6-1.2-2.6-2.6-2.6z"></path>
+        <path d="M132.4 127c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c0-1.6-1.3-2.6-2.6-2.6z"></path>
+        <path d="M119.7 144.1c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c.1-1.3-1.2-2.6-2.6-2.6z"></path>
+        <path d="M132.4 144.1c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M119.7 161.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6V164c.1-1.2-1.2-2.6-2.6-2.6z"></path>
+        <path d="M132.4 161.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6V164c0-1.2-1.3-2.6-2.6-2.6z"></path>
+        <path d="M87.6 153c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6S85 145 85 146.5v3.9c0 1.3 1.1 2.6 2.6 2.6z"></path>
+        <path d="M100.3 153c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v3.9c-.1 1.3 1.2 2.6 2.6 2.6z"></path>
+        <path d="M119.7 176.2c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-3.9c.1-1.6-1.2-2.9-2.6-2.9z"></path>
+        <path d="M132.4 176.2c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-3.9c0-1.6-1.3-2.9-2.6-2.9z"></path>
+        <path d="M152.1 185.7c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v3.9c0 1.2 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 185.7c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v3.9c0 1.2 1.3 2.6 2.6 2.6z"></path>
+    </g>
+</svg>
+<br><h4 class="text-center" style="color:rgba(0,79,162,1)"><b>Busca</b></h4>
+        </div>
+        <div class="col-md-2">
+            <svg preserveAspectRatio="xMidYMid meet" style="fill:rgba(0, 79, 162, 1); max-width: 50%;display:block;margin:auto" data-bbox="7.65 8 184.75 183.95" viewBox="7.649999618530273 8 184.75001525878906 183.94998168945312" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" style="stroke-width: 0px;">
+    <g>
+        <path d="M25.7 113.7l-3.2-3.2c-5.2 5.2-5.2 13.8 0 19l3.2-3.2c-3.5-3.4-3.5-9.1 0-12.6z"></path>
+        <path d="M33.6 112.1c4.4 4.4 11.5 4.4 15.8 0s4.4-11.5 0-15.8-11.5-4.4-15.8 0c-4.4 4.3-4.4 11.4 0 15.8zm12.7-12.7c2.6 2.6 2.6 6.9 0 9.5-2.6 2.6-6.9 2.6-9.5 0-2.6-2.6-2.6-6.9 0-9.5 2.6-2.6 6.9-2.6 9.5 0z"></path>
+        <path d="M101.8 167.6c3.5 3.5 9.2 3.5 12.7 0s3.5-9.2 0-12.7-9.2-3.5-12.7 0-3.5 9.2 0 12.7zm9.5-9.5c1.7 1.7 1.7 4.6 0 6.3-1.7 1.7-4.6 1.7-6.3 0-1.7-1.7-1.7-4.6 0-6.3 1.7-1.8 4.5-1.8 6.3 0z"></path>
+        <path d="M18.1 105.6c.4-.5.8-.9 1.3-1.4l-3.2-3.2c-11.4 11.4-11.4 29.8 0 41.2l41.2 41.2c11.4 11.4 29.8 11.4 41.2 0l-3.2-3.2c-.4.4-.9.9-1.4 1.3-9.5 8.2-24.8 7.8-33.6-1-12-12.1-29.2-28.8-41.6-41.2-8.7-8.9-8.9-24.2-.7-33.7zm44 63.5"></path>
+        <path d="M89.1 177.1c5.2-5.2 5.2-13.8 0-19l-3.2 3.2c3.5 3.5 3.5 9.2 0 12.7s-9.2 3.5-12.7 0l-3.2 3.2c5.3 5.1 13.8 5.1 19.1-.1z"></path>
+        <path d="M78.3 133.3L67.1 122l114-114 11.3 11.3-114.1 114zM73.8 122l4.6 4.6L185.6 19.3l-4.6-4.6L73.8 122z"></path>
+        <path d="M63.2 150.4L50 137.2l19.4-19.4L82.6 131l-19.4 19.4zm-7-13.2l7 7 13.1-13.1-7-7-13.1 13.1z"></path>
+        <path d="M60.2 168.7l-28.5-28.5 17.6-9.9 20.8 20.8-9.9 17.6zm-21.3-27.5l20.2 20.2 5.4-9.6-16-16-9.6 5.4z"></path>
+    </g>
+</svg>
+<br><h4 class="text-center" style="color:rgba(0,79,162,1)"><b>Contrata</b></h4>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<div class="global">
+        <div class="container">
+            <div class="row">
+                <!--<div class="col-lg-8 col-md-8 col-sm-12 col-sm-12 margBot pull-left slider-box">-->
+                    <!--<div class="content-box1">
+                        <h2 class="color2 text-center">
+                            <span style="color:#aabd7d;">Encuentra el candidat@ ideal
+                            </span>
+                        </h2>
+                        <a href="{{path('busqueda')}}" class="btn btn-success btn-lg btn-block" />Buscador avanzado</a>
+                    </div>
+                    <bootstrap slider starts
+                    <div id="carousel-example-generic" class="carousel slide container-fluid" data-ride="carousel">
+                        Indicators 
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+
+    <!-- -------------------------------->
+    <div id="" class="row" role="listbox">
+    <div class="item active col-lg-8" style="border:2px solid rgba(0,79,162,1); padding:20px">
+    <h2 class="text-center"><b>NUESTRAS</b>CANDIDATAS</h2 class="text-center">
+    {% for curriculum in pagination %}
+    <div class="slider_desc col-md-6" style="">
+        <div class="row">
+            <div class="col-md-3">
+                    {% set imagen = curriculum.imagen %}
+                    {% if imagen is not empty %}
+                     <img src="{{ asset ('uploads/images/users/'~ imagen) }}" class="img-circle" alt="{{ curriculum.nombre }} {{ curriculum.apellido }}" style="height:80px;width:80px;" />
+                    {%else%}
+                     <img src="{{ asset ('assets/images/usuaria.png') }}" class="img-circle" alt="{{ curriculum.nombre }} {{ curriculum.apellido }}" style="height:80px"/>
+                    {%endif%}
+            </div>
+        <div class="slider_box col-md-9">
+            <ul>
+                <li>Nacionalidad: <span>{{ curriculum.pais }}</span></li>
+                {% set edadUsuario = edad_usuario(curriculum.fechaNacimiento|date("Y-m-d")) %}
+                <li>Edad: <span>{{ edadUsuario }} años</span></li>
+                <li>Estado Civil: <span>{{ curriculum.estadoCivil }}</span></li>
+                {%if app.user is not empty%}
+                <li>Nickname: <span>{{ curriculum.user.username|split(' ')[0] }}</span></li>
+                
+                {% endif %}
+            </ul>
+        <div class="slidr_box_buttn">
+            <!--a href="#" class="contact_btn" id="Loginid1" style="display: inline-block">Contacto</a-->
+        </div>
+        Contacto <a href="curriculum/{{ curriculum.id }}" class="view_btn">Mirar CV</a>
+    </div>
+        </div>
+    </div>
+    <div class="navigation">
+    </div>
+    {% endfor %}
+    <div class="col-md-12">
+            <div class="text-center">
+        {{knp_pagination_render(pagination)}}
+            </div>   
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="col-md-4">
+                <div class="col-lg-12 col-md-12 col-sm-12 book-form margBot pull-left">
+      <div class="bloque" style="padding: 20px; border-radius: 15px;">
+        <div class="container-fluid" style="padding: 5px;">
+            <div class="row"> 
+              <span class="col-md-12  text-center" style="font-size: 2em; color: #54caf5"><b>3</b></span>
+              <span  class="col-md-12 text-center" style="font-size: 2em; color: #abd58d;">Sencillos Pasos<br>  Para encontrar personal</span>
+            </div>
+        </div><!-- border Gris -->
+        <br><br>
+        <div class="container">
+          <div class="row">
+        <p style="font-size: 1.4rem;">
+          <span style="background-color: rgba(0,79,162,1); padding:5px 10px; color: #54caf5; width: 50px ; height: 50px; border-radius: 100%; margin-right: 10px;">1</span>Revisa nuestra base de datos y busca al candidato/a ideal.</p><br>
+        <p style="font-size: 1.4rem;">
+          <span style="background-color: rgba(0,79,162,1); padding:5px 10px; color: #54caf5; width: 50px ; height: 50px; border-radius: 100%; margin-right: 10px;">2</span>Cancela la membresía para obtener los contactos de las personas que quieres entrevistar.</p><br>
+        <p style="font-size: 1.4rem;">
+          <span style="background-color: rgba(0,79,162,1); padding:5px 10px; color: #54caf5; width: 50px ; height: 50px; border-radius: 100%; margin-right: 10px;">3</span>Valida la información de las hojas de vida y contacta a tantos candidatos como desees según el plan que hayas escogido</p>   <br>         
+          </div>
+        </div>  
+        </div>
+    </div>
+</div>
+                        
+                    </div>
+                 
+                </div>
+        <br><br>    
+        <!--<div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="content-box2">
+                        <h2>
+                           15 Tips para una exitosa entrevista de trabajo</h2>
+                        
+                        <p class="color1">
+                            <span style="font-size: 27px; line-height: 1.2;"><a href="{{path('quincetips')}}">Más información</a></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="content-box3 maxheight verdepro">
+                        <h2>Candidatas</h2>
+                        <p class="color1">
+                            <span style="font-size: 27px; line-height: 1.2;">Muy capaces, preparadas, leales y totalmente seleccionados!! </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="content-box3 maxheight ">
+                        
+                        <p class="color1">
+                            <span style="font-size: 27px; line-height: 1.2;">No desea tener relación de dependencia!! <a href="https://www.prohogar.com.ec/">Más información</a> </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+
+                <!--bootstrap slider ends-->
+                <br />
+                <div class="clearfix">
+                </div>
+            </div>
+</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4" data-aos="fade-right" style="border:2px solid rgba(0,79,162,1); width: 19%;position: relative;top: -40px;left: -40px;">
+              <img src="{{asset('assets/images/buscas_empleo.jpg')}}" alt="" style="position: relative;top: 40px;left: 40px;" data-aos="fade-left" class="img-fluid">
+          </div>
+          <div class="col-md-4" style="-80px">
+              <div style="background-color: white; margin-top: -30px; padding: 15px 10px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px ">
+        <h1 class="text-center" id="buscas" style="margin-left:-50px"><b>¿BUSCAS</b> EMPLEO?</h1>
+        <h3 style=" margin-left:30px">Sigues estos pasos.</h3><br>
+        <p style="color: black; font-size: 2rem; margin-left:30px"><span style="background-color: rgba(0,79,162,1); padding:5px 10px; color: white; width: 50px ; height: 50px; border-radius: 100%; margin-right: 10px;">1</span>Llena la hoja de vida digital con tu foto actualizada.</p><br>
+        <p style="color: black; font-size: 2rem; margin-left:30px"><span style="background-color: rgba(0,79,162,1); padding:5px 10px; color: white; width: 50px ; height: 50px; border-radius: 100%; margin-right: 10px;">2</span>Cancela tu membresía para que tu hoja de vida este visible al público</p><br>
+        <p style="color: black; font-size: 2rem; margin-left:30px"><span style="background-color: rgba(0,79,162,1); padding:5px 10px; color: white; width: 50px ; height: 50px; border-radius: 100%; margin-right: 10px;">3</span>Espera el contacto de sus futuros empleados</p><br>
+        <div class="text-center">
+            <button style="    background-color: rgba(61, 155, 233, 1);
+    cursor: pointer !important;color: white;border-radius: 20px;padding: 10px 20px">Ingresa CV</button>
+        </div>
+        <div class="">
+                        <h3 class=" text-center">
+                            <span style="color:#aabd7d;">Encuentra el candidat@ ideal
+                            </span>
+                        </h3>
+                        <a href="{{path('busqueda')}}" class="btn btn-success btn-lg btn-block" style="background-color: rgba(61, 155, 233, 1);
+    cursor: pointer !important;color: white;border-radius: 20px;padding: 10px 20px" />Buscador avanzado</a>
+                    </div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </div><!--  border Verde-->      
+                <!--div class="box">
+                    <div class="content-box1 content-boxNewImg" align=center>
+                        <div style="color:red;font-size:45px;">3 Sencillos Pasos</div><br>
+                        <div style="color:red;font-size:25px;">Para encontrar personal:</div>
+                    </div>
+                    <p class="list1-2">
+                        <div class="row">
+                            <span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 numberr">1</span>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 divlist">
+                                Revisa nuestra base de datos y busca al candidato/a  ideal</div>
+                        </div>
+                        <div class="row">
+                            <span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 numberr" style="padding-top: 13px !important;">
+                                2</span>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 divlist">
+                                Cancela la membresía para obtener los contactos de las personas que quieras entrevistar</div>
+                        </div>
+                        <div class="row" style="padding-top: 9px;">
+                            <span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 numberr">3</span>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 divlist">
+                                Valida la información de las hojas de vida y contacta a tantos candidatos como desees según el plan que hayas escogido
+                            </div>
+
+                        </div>
+                    </p>
+                    <div class="content-box1" style="font-weight: 400; font-size: 15px; padding: 2px !important;">
+                        <h6 class="color1 text-center" style="font-weight: 400; font-size: 21px; padding: 0px !important;
+                            color: red;">
+                            <span>Para buscar empleo:  </span>
+                        </h6>
+                    </div>
+                    <p class="list1-2">
+                        <div class="row">
+                            <span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 numberr">1</span>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 divlist">
+                                Llena la hoja de vida digital con tu foto actualizada</div>
+                        </div>
+                        <div class="row">
+                            <span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 numberr" style="padding-top: 13px !important;">
+                                2</span>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 divlist">
+                                Cancela tu membresía para que tu hoja de vida este visible al publico</div>
+                        </div>
+                        <div class="row" style="padding-top: 9px;">
+                            <span class="col-lg-1 col-md-1 col-sm-1 col-xs-1 numberr">3</span>
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 divlist">
+                                Espera el contacto de tus futuros empleadores
+                            </div>
+
+                        </div>
+                    </p>
+                    
+                </div-->
+            </div>
+        </div>
+        <div class="container-fluid" style="height:100vh;">
+            <div class="row">
+                <div class="col-md-12 text-center" style="position:relative;top:130px;z-index:998;">
+                    <h1><b>QUE</b> HACEMOS</h1>
+                </div>
+                <div class="col-md-6" style="background-color:#eff1f2;height:100vh; padding-top:150px">
+                    <div class="row" style="margin-left:47%;width:50%">
+                                <div class="col-md-6">
+                                     <svg preserveAspectRatio="xMidYMid meet" style="fill:rgba(0, 79, 162, 1); max-width: 50%;display:block;margin:auto" data-bbox="14.648 9.9 170.678 180.3" viewBox="14.647998809814453 9.899999618530273 170.67791748046875 180.3000030517578" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" style="stroke-width: 0px;">
+                                    <g>
+                                        <path d="M183.9 70.6l-28.6-20.9V20.2c0-1.7-1.1-2.8-2.8-2.8h-14.2c-1.7 0-2.8 1.1-2.8 2.8v15.3l-34.5-25c-1.1-.8-2.2-.8-3.3 0l-82 60.1c-1.1.8-1.4 2.8-.6 3.9.8 1.1 2.8 1.4 3.9.6l7.8-5.6v117.9c0 1.7 1.1 2.8 2.8 2.8h141c1.7 0 2.8-1.1 2.8-2.8V69.5l7.8 5.6c.6.3 1.1.6 1.7.6.8 0 1.7-.3 2.2-1.1.5-1.5.2-3.2-1.2-4zM141.4 23h8.6v22.8l-8.6-6.4V23zm-28.1 161.6H86.1v-63.9h27.2v63.9zm5.6 0v-66.7c0-1.7-1.1-2.8-2.8-2.8H83.6c-1.7 0-2.8 1.1-2.8 2.8v66.7H32.1V65.3l67.6-49.5 67.6 49.5v119.3h-48.4zm24.2-61.5c-6.4 0-11.4 4.2-11.7 9.2v29.5c0 1.7 1.1 3.1 2.8 3.1H152c1.7 0 2.8-1.1 2.8-2.8v-29.8c-.3-5.3-5.3-9.2-11.7-9.2zm6.1 9.7V159H137v-26.1c0-2.5 2.8-4.4 6.1-4.4s6.1 1.9 6.1 4.2v.1zm-91.2-10c-6.4 0-11.4 4.2-11.7 9.5v29.5c0 1.7 1.1 2.8 2.8 2.8h17.8c1.7 0 2.8-1.1 2.8-2.8v-29.5c-.3-5.3-5.3-9.5-11.7-9.5zm6.1 10.3v26.1H51.9v-26.4c0-2.2 2.8-4.2 6.1-4.2s6.1 1.9 6.1 4.2v.3zm35.6-74.5c-10.6-.3-18.9 6.4-19.5 15v10.9c0 1.7 1.1 2.8 2.8 2.8h33.4c1.7 0 2.8-1.1 2.8-2.8V73.6c-.3-8.6-8.9-15-19.5-15zm-2.8 23.1H85.8v-7.5c0-4.7 4.7-8.9 11.1-9.7v17.2zm16.7-7.5v7.2h-11.1V64.2c6.4.8 11.1 5 11.1 9.7v.3z"></path>
+                                    </g>
+                                </svg>
+                                <br>
+                                <h5><b>15 TIPS PARA UNA ENTREVISTA DE TRABAJO</b></h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <svg preserveAspectRatio="xMidYMid meet" style="fill:rgba(0, 79, 162, 1); max-width: 50%;display:block;margin:auto" data-bbox="14.3 4.9 171.5 190.1" viewBox="14.299997329711914 4.900000095367432 171.5 190.1000213623047" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" style="stroke-width: 0px;">
+    <g>
+        <path d="M182.9 189.9h-5.5V30.1c0-1.6-1.1-2.6-2.6-2.6h-13.7V16.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v11.3h-13.7c-1.6 0-2.6 1.1-2.6 2.6v79.5h-17.4V14.1c0-1.6-1.1-2.6-2.6-2.6H87.4c-1.6 0-2.6 1.1-2.6 2.6v119.7h-3.4V75.1c0-1.6-1.1-2.6-2.6-2.6H65.3V22.8c0-1.6-1.1-2.6-2.6-2.6H46.6V7.5c0-1.6-1.1-2.6-2.6-2.6S41.4 6 41.4 7.5v12.6H25.3c-1.6 0-2.6 1.1-2.6 2.6v167.1h-5.8c-1.6 0-2.6 1.1-2.6 2.6 0 1.6 1.1 2.6 2.6 2.6h166.3c1.6 0 2.6-1.1 2.6-2.6s-1.3-2.5-2.9-2.5zM172.1 32.8v157.1h-27.4V32.8h27.4zm-32.6 157.1h-27.1v-75h27.1v75zM90 16.7h27.1v92.6H110c-1.6 0-2.6 1.1-2.6 2.6v21.6H90V16.7zm17.1 122.4v50.8h-3.2v-12.1c0-5.5-4.5-10-10-10s-10 4.5-10 10v11.8h-2.6v-50.5h25.8zm-8.4 50.8h-9.2v-12.1c0-2.6 2.1-4.7 4.7-4.7s4.7 2.1 4.7 4.7v12.1h-.2zm-22.6 0H48.9V77.8H76v112.1zM27.6 25.4h32.1v47.1H46.3c-1.6 0-2.6 1.1-2.6 2.6v114.5H27.6V25.4z"></path>
+        <path d="M56.1 112.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.6 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 112.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 130.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 130.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 93.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.6 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 93.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 148.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.6 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 148.8c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 167.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M68.7 167.2c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M56.1 185.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.5c-.1 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M36.3 175.7c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 50.1c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 68.6c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.6-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 32c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.6-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 86.7c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 105.1c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.5-1.3-2.6-2.6-2.6z"></path>
+        <path d="M50.8 41.7c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M50.8 59.9c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M36.3 123c-1.6 0-2.6 1.1-2.6 2.6v4.8c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.8c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 141.4c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6V144c0-1.5-1.3-2.6-2.6-2.6z"></path>
+        <path d="M36.3 159.6c-1.6 0-2.6 1.1-2.6 2.6v4.5c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.5c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M68.7 185.4c1.6 0 2.6-1.1 2.6-2.6v-4.5c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.5c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 43c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.5-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 52.5c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 60.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6V63c0-1.6-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 69.9c1.6 0 2.6-1.1 2.6-2.6V63c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.6 1.3 2.7 2.6 2.7z"></path>
+        <path d="M97.1 25.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6V28c0-1.3-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 34.9c1.6 0 2.6-1.1 2.6-2.6V28c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.6 1.3 2.7 2.6 2.7z"></path>
+        <path d="M97.1 77.8c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.3-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 87.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.6 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 95.1c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.3-1-2.6-2.6-2.6z"></path>
+        <path d="M109.7 104.9c1.6 0 2.6-1.1 2.6-2.6V98c0-1.6-1.1-2.6-2.6-2.6s-2.6 1.1-2.6 2.6v4.2c0 1.4 1.3 2.7 2.6 2.7z"></path>
+        <path d="M152.1 66.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 66.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 83.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6V81c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 83.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6V81c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 48.8c1.6 0 2.6-1.1 2.6-2.6V42c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 48.8c1.6 0 2.6-1.1 2.6-2.6V42c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 101.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 101.2c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 118.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 118.6c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 135.9c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 135.9c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 153.3c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 153.3c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.3 1.3 2.6 2.6 2.6z"></path>
+        <path d="M152.1 170.7c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 170.7c1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.5 1.3 2.6 2.6 2.6z"></path>
+        <path d="M97.1 112.8c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6 1.6 0 2.6-1.1 2.6-2.6v-4.2c0-1.6-1-2.6-2.6-2.6z"></path>
+        <path d="M119.7 127c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c.1-1.6-1.2-2.6-2.6-2.6z"></path>
+        <path d="M132.4 127c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c0-1.6-1.3-2.6-2.6-2.6z"></path>
+        <path d="M119.7 144.1c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c.1-1.3-1.2-2.6-2.6-2.6z"></path>
+        <path d="M132.4 144.1c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-4.2c0-1.3-1.3-2.6-2.6-2.6z"></path>
+        <path d="M119.7 161.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6V164c.1-1.2-1.2-2.6-2.6-2.6z"></path>
+        <path d="M132.4 161.4c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6V164c0-1.2-1.3-2.6-2.6-2.6z"></path>
+        <path d="M87.6 153c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6S85 145 85 146.5v3.9c0 1.3 1.1 2.6 2.6 2.6z"></path>
+        <path d="M100.3 153c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v3.9c-.1 1.3 1.2 2.6 2.6 2.6z"></path>
+        <path d="M119.7 176.2c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-3.9c.1-1.6-1.2-2.9-2.6-2.9z"></path>
+        <path d="M132.4 176.2c-1.6 0-2.6 1.1-2.6 2.6v4.2c0 1.6 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6v-3.9c0-1.6-1.3-2.9-2.6-2.9z"></path>
+        <path d="M152.1 185.7c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v3.9c0 1.2 1 2.6 2.6 2.6z"></path>
+        <path d="M164.7 185.7c1.6 0 2.6-1.1 2.6-2.6v-3.9c0-1.6-1.1-2.6-2.6-2.6-1.6 0-2.6 1.1-2.6 2.6v3.9c0 1.2 1.3 2.6 2.6 2.6z"></path>
+    </g>
+</svg>
+<br><h5 class="text-center">
+    <b>COMERCIAL</b>
+</h5>
+                                </div>
+                            </div>
+                </div>
+                <div class="col-md-6" style="background-color:#e0e3e5;height:100vh; padding-top:150px">
+                    <div class="row"style="width:50%">
+                        <div class="col-md-6">
+                             <svg preserveAspectRatio="xMidYMid meet" style="fill:rgba(0, 79, 162, 1); max-width: 50%;display:block;margin:auto" data-bbox="7.65 8 184.75 183.95" viewBox="7.649999618530273 8 184.75001525878906 183.94998168945312" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" style="stroke-width: 0px;">
+    <g>
+        <path d="M25.7 113.7l-3.2-3.2c-5.2 5.2-5.2 13.8 0 19l3.2-3.2c-3.5-3.4-3.5-9.1 0-12.6z"></path>
+        <path d="M33.6 112.1c4.4 4.4 11.5 4.4 15.8 0s4.4-11.5 0-15.8-11.5-4.4-15.8 0c-4.4 4.3-4.4 11.4 0 15.8zm12.7-12.7c2.6 2.6 2.6 6.9 0 9.5-2.6 2.6-6.9 2.6-9.5 0-2.6-2.6-2.6-6.9 0-9.5 2.6-2.6 6.9-2.6 9.5 0z"></path>
+        <path d="M101.8 167.6c3.5 3.5 9.2 3.5 12.7 0s3.5-9.2 0-12.7-9.2-3.5-12.7 0-3.5 9.2 0 12.7zm9.5-9.5c1.7 1.7 1.7 4.6 0 6.3-1.7 1.7-4.6 1.7-6.3 0-1.7-1.7-1.7-4.6 0-6.3 1.7-1.8 4.5-1.8 6.3 0z"></path>
+        <path d="M18.1 105.6c.4-.5.8-.9 1.3-1.4l-3.2-3.2c-11.4 11.4-11.4 29.8 0 41.2l41.2 41.2c11.4 11.4 29.8 11.4 41.2 0l-3.2-3.2c-.4.4-.9.9-1.4 1.3-9.5 8.2-24.8 7.8-33.6-1-12-12.1-29.2-28.8-41.6-41.2-8.7-8.9-8.9-24.2-.7-33.7zm44 63.5"></path>
+        <path d="M89.1 177.1c5.2-5.2 5.2-13.8 0-19l-3.2 3.2c3.5 3.5 3.5 9.2 0 12.7s-9.2 3.5-12.7 0l-3.2 3.2c5.3 5.1 13.8 5.1 19.1-.1z"></path>
+        <path d="M78.3 133.3L67.1 122l114-114 11.3 11.3-114.1 114zM73.8 122l4.6 4.6L185.6 19.3l-4.6-4.6L73.8 122z"></path>
+        <path d="M63.2 150.4L50 137.2l19.4-19.4L82.6 131l-19.4 19.4zm-7-13.2l7 7 13.1-13.1-7-7-13.1 13.1z"></path>
+        <path d="M60.2 168.7l-28.5-28.5 17.6-9.9 20.8 20.8-9.9 17.6zm-21.3-27.5l20.2 20.2 5.4-9.6-16-16-9.6 5.4z"></path>
+    </g>
+</svg>
+<br>    
+<h5 class="text-center"><b>CANDIDATAS</b></h5>
+                        </div>
+                        <div class="col-md-6">
+                            <svg preserveAspectRatio="xMidYMid meet" data-bbox="27.1 6.066 145.763 187.834" viewBox="27.100000381469727 6.066098213195801 145.7632598876953 187.8339080810547" style="max-width: 50%;margin-top:40px; fill:rgba(0, 79, 162, 1);" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="img" style="stroke-width: 0px;">
+                            <g>
+                                <path d="M126.7 66.9l-2.7 8.6c-.3 1.1.3 2.3 1.4 2.7.2.1.4.1.6.1.9 0 1.7-.6 2-1.5l2.7-8.6c.3-1.1-.3-2.3-1.4-2.7-1.1-.3-2.3.3-2.6 1.4z"></path>
+                                <path d="M115.1 46.7c1.9 10.4 11.1 17.7 21.3 17.7 1.3 0 2.7-.1 4-.4 11.8-2.2 19.5-13.5 17.3-25.3-2.2-11.8-13.5-19.5-25.3-17.3-11.8 2.1-19.5 13.5-17.3 25.3zm18.1-21.2c9.5-1.8 18.6 4.5 20.3 13.9 1.8 9.5-4.5 18.6-13.9 20.3-9.5 1.8-18.6-4.5-20.3-13.9-1.8-9.4 4.4-18.5 13.9-20.3z"></path>
+                                <path d="M140.9 66.4c-1.2.2-1.9 1.3-1.7 2.5l1.7 8.9c.2 1 1.1 1.7 2.1 1.7h.4c1.2-.2 1.9-1.3 1.7-2.5l-1.7-8.9c-.2-1.1-1.3-1.9-2.5-1.7z"></path>
+                                <path d="M129.6 17.5c.2 1 1.1 1.7 2.1 1.7h.4c1.2-.2 1.9-1.3 1.7-2.5l-1.7-8.9c-.2-1.2-1.3-1.9-2.5-1.7-1.2.2-1.9 1.3-1.7 2.5l1.7 8.9z"></path>
+                                <path d="M156 27.7c.5 0 1-.2 1.4-.5l6.8-6c.9-.8 1-2.1.2-3-.8-.9-2.1-1-3-.2l-6.8 6c-.9.8-1 2.1-.2 3 .4.4 1 .7 1.6.7z"></path>
+                                <path d="M144.2 20.1c.2.1.5.1.7.1.9 0 1.7-.6 2-1.4l3-8.5c.4-1.1-.2-2.3-1.3-2.7-1.1-.4-2.3.2-2.7 1.3l-3 8.5c-.4 1.1.2 2.3 1.3 2.7z"></path>
+                                <path d="M116.8 25.5c.4.4 1 .6 1.5.6s1.1-.2 1.5-.6c.8-.8.9-2.2 0-3l-6.3-6.5c-.8-.8-2.2-.9-3 0-.8.8-.9 2.2 0 3l6.3 6.5z"></path>
+                                <path d="M170.4 51.6l-8.6-2.8c-1.1-.4-2.3.2-2.7 1.4-.4 1.1.2 2.3 1.4 2.7l8.6 2.8c.2.1.4.1.7.1.9 0 1.7-.6 2-1.5.3-1.2-.3-2.4-1.4-2.7z"></path>
+                                <path d="M115.9 58.9l-6.6 6.2c-.9.8-.9 2.1-.1 3 .4.4 1 .7 1.6.7.5 0 1-.2 1.5-.6l6.6-6.2c.9-.8.9-2.1.1-3-.9-.8-2.2-.9-3.1-.1z"></path>
+                                <path d="M155.4 60.5c-.8-.9-2.1-.9-3-.1-.9.8-.9 2.1-.1 3l6.1 6.7c.4.5 1 .7 1.6.7.5 0 1-.2 1.4-.6.9-.8.9-2.1.1-3l-6.1-6.7z"></path>
+                                <path d="M172.8 35.2c-.2-1.2-1.4-1.9-2.5-1.7l-8.9 1.8c-1.2.2-1.9 1.4-1.7 2.5.2 1 1.1 1.7 2.1 1.7h.4l8.9-1.8c1.2-.2 2-1.3 1.7-2.5z"></path>
+                                <path d="M102.1 34.9l8.7 2.5c.2.1.4.1.6.1.9 0 1.8-.6 2-1.5.3-1.1-.3-2.3-1.4-2.6l-8.7-2.5c-1.1-.3-2.3.3-2.6 1.4-.3 1.1.3 2.3 1.4 2.6z"></path>
+                                <path d="M102.3 53c.2 0 .3 0 .5-.1l8.8-2.1c1.1-.3 1.8-1.4 1.6-2.6-.3-1.1-1.4-1.8-2.6-1.6l-8.8 2.1c-1.1.3-1.8 1.4-1.6 2.6.2 1 1.1 1.7 2.1 1.7z"></path>
+                                <path d="M80.2 177.8l10.6-5.3 7.3 7.3 48.1-24L84 93.6l-48.1 24 23.5 23.5v18.8H44.7v29.3H27.1v4.7H157v-4.7H91.6l-11.4-11.4zm-3.5-3.6l-12.9-12.9v-15.8L87.2 169l-10.5 5.2zm7.3-36.6l-11.4-11.4 10.6-5.3 11.4 11.4-10.6 5.3zm14.1-2.1l11.4 11.4-10.5 5.4-11.4-11.4 10.5-5.4zm-3.5 18.8L84 159.6l-11.4-11.4 10.6-5.3 11.4 11.4zm4.1 19.9l-11.4-11.4 10.6-5.3 11.4 11.4-10.6 5.3zm14.6-7.3l-11.4-11.4 10.6-5.3 11.4 11.4-10.6 5.3zm25.3-12.6l-10.6 5.3-11.4-11.4 10.6-5.3 11.4 11.4zm-14.7-14.7l-10.6 5.3-11.4-11.4 10.6-5.3 11.4 11.4zM109.2 125l-10.6 5.3-11.4-11.4 10.6-5.3 11.4 11.4zM83.4 98.9l11.4 11.4-10.6 5.3-11.4-11.4 10.6-5.3zm-14.6 7.3l11.4 11.4-10.6 5.3-11.4-11.4 10.6-5.3zm-25.3 12.6l10.6-5.3L65.5 125 55 130.3l-11.5-11.5zm14.7 14.7l10.6-5.3 11.4 11.4-10.6 5.3-11.4-11.4zm-8.8 55.7v-24.6h11.4l24.6 24.6h-36z"></path>
+                            </g>
+                        </svg>
+                        <br><br><br><br><br>    
+                        <h5><b>NO MAS RELACION DE DEPENDENCIA</b></h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center" style="position:relative;top:-230px;z-index:998;">
+                    <a href="#" class="btn btn-success" style="background-color: rgba(61, 155, 233, 1);
+    cursor: pointer !important;color: white;border-radius: 20px;padding: 10px 20px" >Registrar ahora</a>
+                </div>
+            </div>
+        </div>
+<div id="carousel-example-genericas" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-genericas" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-genericas" data-slide-to="1"></li>
+    <li data-target="#carousel-example-genericas" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active" style=";height:40vh">
+      
+      <div class="carousel-caption">
+        <h1 style="color:rgba(0, 79, 162, 1)"><b>TESTIMONIOS</b></h1>
+        <p style="color:rgba(0, 79, 162, 1)">"Me ha resultado muy útil la plataforma para poder revisar las hojas de vida de las personas que entraran a mi casa para trabajar"</p>
+        <br>
+        <p style="color:rgba(0, 79, 162, 1)">Mariana S</p>
+      </div>
+    </div>
+    <div class="item" style=";height:40vh">
+      
+      <div class="carousel-caption">
+        <h1 style="color:rgba(0, 79, 162, 1)"><b>TESTIMONIOS</b></h1>
+        <p style="color:rgba(0, 79, 162, 1)">"  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit eum, aut! Temporibus voluptatum animi at iste, ad quis quisquam saepe asperiores veritatis unde aperiam quae possimus maxime aspernatur placeat consectetur!"</p>
+        <br>
+        <p style="color:rgba(0, 79, 162, 1)">Gabriel G</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-genericas" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-genericas" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div class="container-fluid" style="background-image: url({{ asset ('assets/images/office.jpg') }}); background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%;background-blend-mode:lighten; background-color: rgba(255,255,255,.5);">
+    <div class="row">
+        <div class="col-md-12 text-center" style="padding: 150px; color: rgba(61, 155, 233, 1)">
+            <h1><b>Request A</b> FREE ESTIMATE</h1>
+            <p>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</p>
+            <a href="#" class="btn btn-success" style="background-color: rgba(61, 155, 233, 1);
+    cursor: pointer !important;color: white;border-radius: 20px;padding: 10px 20px" >Get a Quote Now</a>
+        </div>
+    </div>
+</div>
+        <div class="clearfix">
+        </div>
+
+        <!--div class="col-lg-4 col-md-4 col-sm-12">
+            <div class="guideBox">
+                <div class="videoThum">
+                    <a href="javascript:void(0);;" rel="https://www.youtube.com/embed/gwOxJ9HxW0Y" class="youTubeVideo">
+                        <img style="width: 100%;" src="https://find-nanny-and-maid.com/img/watch-video.png" /></a></div>
+                <div class="videoInfo">
+                    <h2>
+                    </h2>
+                </div>
+            </div>
+        </div-->
+        <div class="clearfix">
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-12">
+            <!--<div class="content-box1" style="padding: 0px !important;">
+                    <iframe width="370" height="297" src="https://www.youtube.com/embed/gwOxJ9HxW0Y"
+                        frameborder="0" allowfullscreen></iframe>
+                </div>-->
+            <!--Video popup-->
+            
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+            <!--div class="row">
+                <div class="content-box4 col-lg-12 col-md-12 col-sm-12">
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <h2 class="color1">
+                            All our Candidates
+                            <br>
+                            <span>Are in UAE!</span>
+                        </h2>
+                        <h3 class="color1">
+                            <br />
+                            Why choose our Agency?<br />
+                            When you choose our professional nanny and maid service, you are choosing the safest,
+                            simplest and surest way of finding a reliable,<br />
+                            top-notch caregiver...</h3>
+
+                        <a href="MaidList.aspx" class="btn-default btn4">Search Now</a>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 margBot pull-right">
+                        <div style="padding-top: 50px;">
+                            <img style="width: 85%;" src="https://find-nanny-and-maid.com/img/no-hidden-charges.png" class="img-responsive img-rounded" />
+                        </div>
+                    </div>
+                </div>
+            </div-->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div> </div>
+
+    {% endblock%}                                                                                                                                                   

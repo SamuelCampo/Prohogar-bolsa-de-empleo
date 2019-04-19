@@ -1,0 +1,186 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@BackendBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: en
+    app.path.user_images: /uploads/images/users
+    app.path.user_servicios: /uploads/images/servicios
+    app.path.user_carnets: /uploads/images/carnets
+    app.path.user_certificados: /uploads/images/certificados
+    app.path.user_certificadoslaborales: /uploads/images/certificadoslaborales
+    app.path.user_cedulas: /uploads/images/cedulas
+    app.path.user_licencias: /uploads/images/licencias
+
+framework:
+    #esi: ~
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    templating:
+        engines: ['twig']
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+        - 'bootstrap_3_layout.html.twig'
+        
+
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        # if using pdo_sqlite as your database driver:
+        #   1. add the path in parameters.yml
+        #     e.g. database_path: '%kernel.project_dir%/var/data/data.sqlite'
+        #   2. Uncomment database_path in parameters.yml.dist
+        #   3. Uncomment next line:
+        #path: '%database_path%'
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+#fos_user:
+#    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+#    firewall_name: main
+#    user_class: BackendBundle\Entity\User
+#    from_email:
+#        address: "juanitourquiza@gmail.com"
+#        sender_name: "Demo"
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        user_images:
+            delete_on_remove: true
+            delete_on_update: true
+            inject_on_load: true
+            uri_prefix:         '%app.path.user_images%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/users'
+            namer:              vich_uploader.namer_uniqid
+
+        servicio_basico:
+            delete_on_remove: true
+            delete_on_update: true
+            inject_on_load: true
+            uri_prefix:         '%app.path.user_servicios%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/servicios'
+            namer:              vich_uploader.namer_uniqid
+
+        carnet_conadis:
+            delete_on_remove: true
+            delete_on_update: true
+            inject_on_load: true
+            uri_prefix:         '%app.path.user_carnets%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/carnets'
+            namer:              vich_uploader.namer_uniqid
+
+        certificado_trabajo:
+            delete_on_remove: true
+            delete_on_update: true
+            inject_on_load: false
+            uri_prefix:         '%app.path.user_certificados%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/certificados'
+            namer:              vich_uploader.namer_uniqid
+
+        certificados_laborales:
+            delete_on_remove: true
+            delete_on_update: true
+            inject_on_load: false
+            uri_prefix:         '%app.path.user_certificadoslaborales%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/certificadoslaborales'
+            namer:              vich_uploader.namer_uniqid
+
+        cedulas_imagenes:
+            delete_on_remove: true
+            delete_on_update: true
+            inject_on_load: false
+            uri_prefix:         '%app.path.user_cedulas%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/cedulas'
+            namer:              vich_uploader.namer_uniqid
+            
+        licencias_imagenes:
+            delete_on_remove: true
+            delete_on_update: true
+            inject_on_load: false
+            uri_prefix:         '%app.path.user_licencias%'
+            upload_destination: '%kernel.root_dir%/../web/uploads/images/licencias'
+            namer:              vich_uploader.namer_uniqid    
+
+
+easy_admin:
+    site_name: 'Prohogar'
+    entities:
+        - BackendBundle\Entity\User
+        - BackendBundle\Entity\Aptitudes
+        - BackendBundle\Entity\Ciudad
+        - BackendBundle\Entity\Curriculum
+        - BackendBundle\Entity\Enfermedades
+        - BackendBundle\Entity\EstadoCivil
+        - BackendBundle\Entity\Estudios
+        - BackendBundle\Entity\Experiencia
+        - BackendBundle\Entity\HorarioTrabajo
+        - BackendBundle\Entity\Idiomas
+        - BackendBundle\Entity\Intereses
+        - BackendBundle\Entity\Pais
+        - BackendBundle\Entity\Licencia
+        - BackendBundle\Entity\Raza
+        - BackendBundle\Entity\Religion
+        - BackendBundle\Entity\Responsabilidades
+        - BackendBundle\Entity\SectorVivienda
+        - BackendBundle\Entity\Sexo
+        - BackendBundle\Entity\SignoZodiaco
+        - BackendBundle\Entity\TipoSangre
+        - BackendBundle\Entity\TipoTrabajo
+        - BackendBundle\Entity\Vivienda
+
+knp_paginator:
+    page_range: 5
+    default_options: 
+        page_name: page
+        sort_field_name: sort
+        sort_direction_name: direction
+        distinct: true
+    template:
+        pagination: AppBundle:Layouts:custom_pagination.html.twig
+        sortable: knpPaginatorBundle:Pagination:sortable_link.html.twig

@@ -1,0 +1,616 @@
+{% extends "AppBundle:Layouts:layout.html.twig"%}
+{% block content%}
+
+<div class="global">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 margBot pull-left slider-box">
+                    <div class="content-box1">
+                        {% if experiencias is empty and (curriculum.fechaSuscripcion|date("Y-m-d") > '2018-12-18') %}
+                        <div class="alert alert-danger">
+                            No olvide completar su experiencia laboral, caso contrario su hoja de vida no se publicará
+                            <a class="btn btn-success btn-lg" href="{{ path('experiencia_new') }}"><span class="glyphicon glyphicon-plus">Agregar Experiencia Laboral</span></a>
+                        </div>
+                        {% endif %}
+
+    {% block body %}
+    <br>
+
+    <header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="profile-img">
+                    {% set imagen = curriculum.imagen %}
+                    {% if imagen is not empty %}
+                     <img src="{{ asset ('uploads/images/users/'~ imagen) }}" class="img-circle" alt="{{ curriculum.nombre }} {{ curriculum.apellido }}" width="200" height="200" />
+                    {%else%}
+                     <img src="{{ asset ('assets/images/usuaria.png') }}" class="img-circle" alt="{{ curriculum.nombre }} {{ curriculum.apellido }}" width="200" height="200" />
+                    {%endif%}
+                </div>
+                <!-- Profile Image -->
+            </div>
+
+            <div class="col-md-9">
+                <div class="name-wrapper">
+                    <h1 class="name">{{ curriculum.nombre }} {{ curriculum.apellido }}</h1>
+                    <span>
+                        Trabajos que puede realizar:
+                        {% for trabajo in curriculum.intereses %}
+                            {{trabajo.nombre}}
+                        {% endfor %}
+                    </span>
+                </div>
+                <p>
+                    {{ curriculum.biografia}}
+                </p>
+
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="personal-details">
+                            <strong>{{ curriculum.cedula }}</strong>
+                            <br>
+                            <small>Documento de Identidad</small>
+                            {%set cedulasimagenes=curriculum.cedulasimagenes%}
+                            {% if cedulasimagenes is not empty %}
+                              <a href="{{ asset ('uploads/images/cedulas/'~ cedulasimagenes) }}" target="_blank">Documento</a>
+                            {%else%}
+                              Falta documento
+                            {%endif%}
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="personal-details">
+                             {% set edadUsuario = edad_usuario(curriculum.fechaNacimiento|date("Y-m-d")) %}
+                             <strong>{{ edadUsuario }} años</strong>
+                             <br>
+                             <small>Edad</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="personal-details">
+                            <strong>{{ curriculum.pais }}</strong>
+                            <br>
+                            <small>Lugar de Nacimiento</small>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="personal-details">
+                            <strong>
+                                {% for idioma in curriculum.idiomas %}
+                                    {{idioma.nombre}}
+                                {% endfor %}
+                            </strong>
+                            <br>
+                            <small>Idiomas</small>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</header>
+<!-- .header-->
+        {% if (experiencias is not empty or (curriculum.fechaSuscripcion|date("Y-m-d") < '2018-12-18')) %}
+<section class="expertise-wrapper section-wrapper">
+    <div class="container-fluid" style="    padding: 15px;
+    border: 1px solid #a2d180;
+    margin-bottom: 10px;    border-top-left-radius: 15px; border-top-right-radius: 15px;">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#a2d180; margin-top:-15px;color:white; border-radius-top-left:15px;border-radius-top-rigth:15px;    border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="section-title">
+                    <h3><i class="fas fa-user"></i> Datos Personales</h3>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Sexo:</strong> {{ curriculum.sexo }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Teléfono Fijo:</strong> {{ curriculum.telefono }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Teléfono Celular:</strong> {{ curriculum.celular }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Ciudad de Residencia:</strong> {{ curriculum.ciudad }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Sector de Vivienda:</strong> {{ curriculum.sectorVivienda }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Barrio:</strong> {{ curriculum.barrio }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Dirección:</strong> {{ curriculum.direccion }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Tipo de Vivienda:</strong> {{ curriculum.vivienda }}</p>
+                        </div>
+                    </div>
+                    
+                    {% if curriculum.tiempoarriendo is not empty %}
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Tiempo de arriendo:</strong> {{ curriculum.tiempoarriendo }}</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Estado Civil:</strong> {{ curriculum.estadoCivil }}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Tiene hijos:</strong> {% if curriculum.tieneHijos %}Si{% else %}No{% endif %} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Cuantos Hijos tiene:</strong> {{ curriculum.hijos }} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Información sobre hijos:</strong> {{ curriculum.detalleHijos }} </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Eres madre soltera:</strong> {% if curriculum.madreSoltera %}Si{% else %}No{% endif %} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Ya te realizaste la ligadura de trompas:</strong> {% if curriculum.ligadura %}Si{% else %}No{% endif %} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Raza:</strong> {{ curriculum.raza }} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Correo Electrónico:</strong> {{ curriculum.user.email }} </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Religión:</strong> {{ curriculum.religion }} </p>
+                        </div>
+                    </div>
+                </div>
+                {% if curriculum.tipoDiscapacidad %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Tiene Discapacidad:</strong> {% if curriculum.discapacidad %}Si{% else %}No{% endif %} </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Tipo de Discapacidad:</strong> 
+                                {% if curriculum.tipoDiscapacidad %}
+                                 {{curriculum.tipoDiscapacidad}}   
+                                 {% else %}
+                                 No aplica
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Porcentaje de Discapacidad:</strong> 
+                                {% if curriculum.porcentajeDiscapacidad %}
+                                 {{curriculum.porcentajeDiscapacidad}}   
+                                 {% else %}
+                                 No aplica
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Signo de Zodiaco:</strong> {{ curriculum.signoZodiaco }} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .row -->
+
+
+    </div>
+</section>
+<!-- .expertise-wrapper -->
+<hr>
+<section class="expertise-wrapper section-wrapper">
+    <div class="container-fluid" style="    padding: 15px;
+    border: 1px solid #a2d180;
+    margin-bottom: 10px;    border-top-left-radius: 15px; border-top-right-radius: 15px;">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#a2d180; margin-top:-15px;color:white; border-radius-top-left:15px;border-radius-top-rigth:15px;    border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="section-title">
+                    <h3>Formación</h3>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Estudios Realizados:</strong> {{ curriculum.estudios }} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Curso de Capacitación:</strong> {{ curriculum.capacitacion }} </p>
+                        </div>
+                    </div>
+                    {% if curriculum.conducir %}
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Sabe Conducir:</strong> {% if curriculum.conducir %}Si{% else %}No{% endif %} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Tipo de Licencia:</strong> 
+                                {{ curriculum.licencia }}
+                                {%set licenciasimagenes=curriculum.licenciasimagenes%}
+                            </p>
+                            <p>    
+                                {% if licenciasimagenes is not empty %}
+                                 <a href="{{ asset ('uploads/images/licencias/'~ licenciasimagenes) }}" target="_blank">Documento</a>
+                                {%else%}
+                                 Falta documento
+                                {%endif%}
+                            </p>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+                
+                <div class="row">
+
+                </div>
+                
+            </div>
+        </div>
+        <!-- .row -->
+
+
+    </div>
+</section>
+<!-- .expertise-wrapper -->
+<hr>
+<section class="section-wrapper section-experience">
+    <div class="container-fluid" style="    padding: 15px;
+    border: 1px solid #a2d180;
+    margin-bottom: 10px;    border-top-left-radius: 15px; border-top-right-radius: 15px;">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#a2d180; margin-top:-15px;color:white; border-radius-top-left:15px;border-radius-top-rigth:15px;    border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="section-title"><h3>Tareas que sabe realizar</h3></div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Puede cuidar:</strong>
+                                {% for responsabilidades in curriculum.responsabilidades %}
+                                    {{responsabilidades.nombre}},
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Nivel Cocina:</strong>
+                                {% if curriculum.nivelCocina %}
+                                 {{curriculum.nivelCocina}}   
+                                 {% else %}
+                                 No aplica
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Aptitudes:</strong>
+                                {% for aptitudes in curriculum.aptitudes %}
+                                    {{aptitudes.nombre}},
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Nivel Limpieza:</strong>
+                                {% if curriculum.nivelLimpieza %}
+                                 {{curriculum.nivelLimpieza}}   
+                                 {% else %}
+                                 No aplica
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Nivel Planchado:</strong>
+                                {% if curriculum.nivelPlancha %}
+                                 {{curriculum.nivelPlancha}}   
+                                 {% else %}
+                                 No aplica
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--.row-->
+        </div>
+    </div>
+    <!-- .container -->
+</section>
+<!-- .section-experience -->
+
+<hr>
+<section class="section-wrapper section-experience">
+    <div class="container-fluid" style="    padding: 15px;
+    border: 1px solid #a2d180;
+    margin-bottom: 10px;    border-top-left-radius: 15px; border-top-right-radius: 15px;">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#a2d180; margin-top:-15px;color:white; border-radius-top-left:15px;border-radius-top-rigth:15px;    border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="section-title"><h3>Experiencia Laboral</h3></div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                                
+                                {% for experiencium in experiencias %}
+                                    <p><strong>Empleo en:</strong> {{ experiencium.empresa }}</p>
+                                    <p><strong>Cargo:</strong> {{ experiencium.cargo }}</p>
+                                    <p><strong>Teléfono:</strong> {{ experiencium.telefono }}</p>
+                                    <p><strong>Fecha de Inicio:</strong> {% if experiencium.fechaInicio %}{{ experiencium.fechaInicio|date('Y-m-d') }}{% endif %}</p>
+                                    <p><strong>Fecha de Fin:</strong> {% if experiencium.fechaFin %}{{ experiencium.fechaFin|date('Y-m-d') }}{% endif %}</p>
+                                    <p><strong>Razón de Salida:</strong> {{ experiencium.motivoSalida }}</p>
+                                    <p><strong>Certificado Laboral:</strong> 
+                                        {%set certificadolaboral=experiencium.imagen%} 
+                                        {% if certificadolaboral is not empty %}
+                                        <a href="{{ asset ('uploads/images/certificadoslaborales/'~ certificadolaboral) }}" target="_blank">Certificado Laboral</a> 
+                                        {%else%}
+                                        Falta documento
+                                        {%endif%}
+                                    </p>
+                                    <hr>
+                            {% endfor %}
+                        </div>
+                        <p><strong>Mecanizado IESS:</strong>
+                               {%set certificado=curriculum.certificado%} 
+                               {% if certificado is not empty %}
+                               <a href="{{ asset ('uploads/images/certificados/'~ certificado) }}" target="_blank">Servicio</a> 
+                               {%else%}
+                               Falta documento
+                               {%endif%}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--.row-->
+        </div>
+    </div>
+    <!-- .container -->
+</section>
+
+<hr>
+<section class="section-wrapper section-experience">
+    <div class="container-fluid" style="    padding: 15px;
+    border: 1px solid #a2d180;
+    margin-bottom: 10px;    border-top-left-radius: 15px; border-top-right-radius: 15px;">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#a2d180; margin-top:-15px;color:white; border-radius-top-left:15px;border-radius-top-rigth:15px;    border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="section-title"><h3>Historial Clínico</h3></div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Peso:</strong> {{curriculum.peso}} libras </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Estatura:</strong> {{curriculum.estatura}} cm </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Que enfermedades tiene:</strong>
+                                {% for enfermedades in curriculum.enfermedades %}
+                                     {{enfermedades.nombre}},
+                                {% else %}
+                                     No tiene enfermedades
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Otra Enfermedad:</strong>
+                               {%set otraEnfermedad=curriculum.otraEnfermedad%} 
+                               {% if otraEnfermedad is not empty %}
+                               {{curriculum.otraEnfermedad}}
+                               {%else%}
+                               Ninguna
+                               {%endif%}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--.row-->
+        </div>
+    </div>
+    <!-- .container -->
+</section>
+<!-- .section-experience -->
+<hr>
+<section class="section-wrapper section-experience">
+    <div class="container-fluid" style="    padding: 15px;
+    border: 1px solid #a2d180;
+    margin-bottom: 10px;    border-top-left-radius: 15px; border-top-right-radius: 15px;">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#a2d180; margin-top:-15px;color:white; border-radius-top-left:15px;border-radius-top-rigth:15px;    border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="section-title"><h3>Documentos</h3></div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Planilla de Servicio Básico:</strong>
+                            {%set servicio=curriculum.servicio%}
+                               {% if servicio is not empty %} 
+                               <a href="{{ asset ('uploads/images/servicios/'~ servicio) }}" target="_blank">Servicio</a> 
+                               {%else%}
+                               Falta documento
+                               {%endif%}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            <p><strong>Carnet de Conadis:</strong>
+                            {%set carnet=curriculum.carnet%}
+                               {% if carnet is not empty %}
+                               <a href="{{ asset ('uploads/images/carnets/'~ carnet) }}" target="_blank">Carnet</a>
+                               {%else%}
+                               No aplica
+                               {%endif%}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--.row-->
+        </div>
+    </div>
+    <!-- .container -->
+</section>
+<!-- .section-experience -->
+<hr>
+<section class="section-wrapper section-experience">
+    <div class="container-fluid" style="    padding: 15px;
+    border: 1px solid #a2d180;
+    margin-bottom: 10px;    border-top-left-radius: 15px; border-top-right-radius: 15px;">
+        <div class="row">
+            <div class="col-md-12" style="background-color:#a2d180; margin-top:-15px;color:white; border-radius-top-left:15px;border-radius-top-rigth:15px;    border-top-left-radius: 15px;border-top-right-radius: 15px;">
+                <div class="section-title"><h3>Video</h3></div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="expertise-item">
+                            {% if curriculum.video is empty %}
+                            <p><strong>Enlace:</strong>
+                            {%endif%}
+                            {% set video = curriculum.video %}
+                            {% if video is not empty %}
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{video}}" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+                            {%else%}
+                            Todavia no sube video
+                            {%endif%}
+                            </p>
+                       </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--.row-->
+        </div>
+    </div>
+    <!-- .container -->
+</section>
+<!-- .section-experience -->
+
+
+    <ul>
+            <a href="{{ path('curriculum_index') }}" class="btn btn-info">Regresar al listado</a>
+            {%if idCV == app.user.id%}
+            <a href="{{ path('curriculum_edit', { 'id': curriculum.id }) }}" class="btn btn-warning">Editar</a>
+            <br><br>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar" class="btn btn-danger" onclick="return confirm('Esta seguro?')">
+            {{ form_end(delete_form) }}
+            {% endif %}
+    </ul>
+        {%endif%}
+{% endblock %}
+                      
+                    </div>
+                    <!--bootstrap slider starts-->
+                    
+                        
+                    </div>
+                    
+                </div>
+                <!--bootstrap slider ends-->
+                
+                
+            </div>
+            
+        </div>
+        
+
+        
+    </div>
+    </div> </div>
+
+    {% endblock%}
+

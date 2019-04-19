@@ -1,0 +1,7 @@
+app_homepage:
+    path: /
+    defaults: { _controller: AppBundle:App:home }
+
+app_app:
+    resource: "@AppBundle/Resources/config/routing/app.yml"
+    prefix: /
